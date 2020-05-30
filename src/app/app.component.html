@@ -1,0 +1,77 @@
+<html>
+  <body>
+    <a (click)="getData()">Click here to start</a>
+
+    <table *ngIf="tableData">
+      <thead>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Document</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tbl of tableData">
+          <td>{{tbl.name}}</td>
+          <td>{{tbl.address}}</td>
+          <td (click)="getDetails(tbl)">{{tbl.link}}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div *ngIf="tablePersonalData">
+      <hr>
+    <h2>Personal Details</h2>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>email</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tbl of tablePersonalData">
+          <td>{{tbl.name}}</td>
+          <td>{{tbl.contact}}</td>
+          <td>{{tbl.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    
+    <div *ngIf="tableAddressData">
+      <hr>
+      <h2>Residential Details</h2>
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Area</th>
+          <th>Landmark</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tbl of tableAddressData">
+            <td>{{tbl.name}}</td>
+            <td>{{tbl.area}}</td>
+            <td>{{tbl.landmark}}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      
+      <div *ngIf="tableDocData">
+        <hr>
+        <h2>Document Details</h2>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Aadhar</th>
+            <th>PAN</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tbl of tableDocData">
+              <td>{{tbl.name}}</td>
+              <td>{{tbl.aadhar}}</td>
+              <td>{{tbl.pan}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+  </body>
+</html>
